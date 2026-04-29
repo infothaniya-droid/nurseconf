@@ -1454,6 +1454,8 @@ async function resetUserPassword() {
   if (!res.success) { toast(res.error, 'error'); return; }
   toast('รีเซ็ตรหัสผ่านเป็น nurse123 แล้ว ✅', 'success');
 }
+
+async function deleteUser(id) {
   if (!confirm('ลบผู้ใช้นี้? การกระทำนี้ไม่สามารถยกเลิกได้')) return;
   const res = await api('adminDeleteUser', { id });
   if (!res.success) { toast(res.error, 'error'); return; }
